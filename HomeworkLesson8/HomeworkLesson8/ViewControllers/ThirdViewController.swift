@@ -25,7 +25,7 @@ class ThirdViewController: UIViewController {
         navigationItem.rightBarButtonItem = forwardButton
         navigationItem.title = "Third"
         navigationController?.isNavigationBarHidden = false
-        navigationItem.setHidesBackButton(true, animated: true)
+        navigationItem.setHidesBackButton(false, animated: true)
     }
     
 }
