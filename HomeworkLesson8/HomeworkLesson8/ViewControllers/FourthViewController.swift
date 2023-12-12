@@ -38,7 +38,11 @@ class FourthViewController: UIViewController {
         
         navigationItem.title = "Fourth"
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeColor), name: Notification.Name(notificationName), object: nil)
+    }
+    
+    @objc func changeColor(){
+        view.backgroundColor = .red
     }
     
 }

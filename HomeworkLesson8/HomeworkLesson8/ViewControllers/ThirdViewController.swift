@@ -26,6 +26,10 @@ class ThirdViewController: UIViewController {
         navigationItem.title = "Third"
         navigationController?.isNavigationBarHidden = false
         navigationItem.setHidesBackButton(false, animated: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeColor), name: Notification.Name(notificationName), object: nil)
+    }
+    @objc func changeColor(){
+        view.backgroundColor = .red
     }
     
 }

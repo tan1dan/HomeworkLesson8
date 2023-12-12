@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "First"
+        NotificationCenter.default.addObserver(self, selector: #selector(changeColor), name: Notification.Name(notificationName), object: nil)
     }
     
     @IBAction func toSecondViewControllerTapped(_ sender: UIButton) {
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         
     }
-
+    @objc func changeColor(){
+        view.backgroundColor = .red
+    }
 }
 

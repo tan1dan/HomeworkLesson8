@@ -6,11 +6,13 @@
 //
 
 import UIKit
-
+let notificationName = "FifthViewControllerNotification"
 class FifthViewController: UIViewController {
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
+        NotificationCenter.default.addObserver(self, selector: #selector(changeColor), name: Notification.Name(notificationName), object: nil)
     }
     @IBAction func restartAndSwitch(_ sender: UIButton) {
         guard let nv = navigationController,
@@ -31,6 +33,9 @@ class FifthViewController: UIViewController {
        
             print(nv.viewControllers[i])
         }
+        NotificationCenter.default.post(name: Notification.Name(notificationName), object: nil)
     }
-    
+    @objc func changeColor(){
+        view.backgroundColor = .red
+    }
 }
